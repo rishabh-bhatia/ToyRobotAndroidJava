@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     //In a 6 x 6 table, we can say that there are 3 units on each axis from the origin where the
     //robot can move.
     public void place (int xCoordinate, int yCoordinate, int direction) {
-        if (direction > 0 && direction < 4 && xCoordinate < 4 && xCoordinate > - 4 && yCoordinate < 4 && yCoordinate > - 4) {
+        if (direction > 0 && direction < 4 && xCoordinate < 6 && xCoordinate > - 1 && yCoordinate < 6 && yCoordinate > - 1) {
             this.robot = new RobotModel(xCoordinate, yCoordinate, direction);
         } else {
             Toast.makeText(getApplicationContext(), "Please insert vakues into the fields" +
@@ -92,13 +92,13 @@ public class MainActivity extends AppCompatActivity {
     public void move (RobotModel robot) {
 
         if (robot.getDirection() > 0){
-            if (robot.getDirection() == 3 && robot.getXCoordinate() < 3) {
+            if (robot.getDirection() == 3 && robot.getXCoordinate() < 5) {
                 robot.setXCoordinate(robot.getXCoordinate() + 1);
-            } else if(robot.getDirection() == 4  && robot.getXCoordinate() > -3) {
+            } else if(robot.getDirection() == 4  && robot.getXCoordinate() > 0) {
                 robot.setXCoordinate(robot.getXCoordinate() - 1);
-            } else if (robot.getDirection() == 1 && robot.getYCoordinate() < 3) {
+            } else if (robot.getDirection() == 1 && robot.getYCoordinate() < 5) {
                 robot.setYCoordinate(robot.getYCoordinate() + 1);
-            } else if (robot.getDirection() == 2 && robot.getYCoordinate() > - 3) {
+            } else if (robot.getDirection() == 2 && robot.getYCoordinate() > 0) {
                 robot.setYCoordinate(robot.getYCoordinate() - 1);
             } else {
                 Toast.makeText(getApplicationContext(), "Can't move ahead, please turn!", Toast.LENGTH_LONG).show();
