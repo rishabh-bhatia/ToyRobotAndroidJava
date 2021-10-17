@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     //In a 6 x 6 table, we can say that there are 3 units on each axis from the origin where the
     //robot can move.
     public void place (int xCoordinate, int yCoordinate, int direction) {
-        if (direction > 0 && direction < 4 && xCoordinate < 6 && xCoordinate > - 1 && yCoordinate < 6 && yCoordinate > - 1) {
+        if (direction > 0 && direction < 5 && xCoordinate < 6 && xCoordinate > - 1 && yCoordinate < 6 && yCoordinate > - 1) {
             this.robot = new RobotModel(xCoordinate, yCoordinate, direction);
         } else {
             Toast.makeText(getApplicationContext(), "Please insert vakues into the fields" +
